@@ -1,0 +1,14 @@
+streamlit
+openai
+python-dotenv
+pandas
+wget
+elasticsearch
+langchain-openai
+langchainhub
+sentence-transformers
+numpy
+torch
+scikit-learn
+torchvision
+pandas
