@@ -20,7 +20,7 @@ assistant = biteChatRAG.BiteChaAssistant(client, assistant_id)
 st.set_page_config(layout="wide")
 
 # Assuming you've saved your logo as 'logo.png' in your project directory
-logo_html = """<img src="./bitechat_logo.png" alt="Logo" width="70" height="70">"""
+logo_html = """<img src="https://github.com/phwamy/bitechat/blob/main/bitechat_logo.png?raw=true" alt="Logo" width="70" height="70">"""
 
 col1, col2 = st.columns([1, 8])  # Adjust the ratio as needed
 
