@@ -6,3 +6,4 @@ python-dotenv
 pydantic
 langchain-community
 langchain
+langchain-openai
