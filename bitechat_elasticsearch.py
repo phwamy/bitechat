@@ -6,7 +6,6 @@ from langchain.callbacks import LangChainTracer
 import os
 from typing import List, Dict, Optional, Type
 from sentence_transformers import SentenceTransformer
-# from langchain.chat_models import ChatOpenAI
 from langchain_community.chat_models import ChatOpenAI
 from langchain.agents import AgentExecutor, create_openai_tools_agent
 from langchain_openai import ChatOpenAI

@@ -3,6 +3,8 @@ from bitechat_elasticsearch import chat
 import uuid
 
 def initialize_session_state():
+    if 'chat_started' not in st.session_state:
+        st.session_state.chat_started = False
     if 'session_id' not in st.session_state:
         st.session_state.session_id = str(uuid.uuid4()) 
     if 'filter' not in st.session_state:
@@ -13,11 +15,20 @@ def initialize_session_state():
 def setup_page_layout():
     st.set_page_config(layout="wide")
     logo_html = """<img src="https://github.com/phwamy/bitechat/blob/main/bitechat_logo.png?raw=true" alt="Logo" width="70" height="70">"""
-    col1, col2 = st.columns([1, 8])  # Adjust the ratio as needed
+    col1, col2 = st.columns([1, 8])
     with col1:
         st.markdown(logo_html, unsafe_allow_html=True)
     with col2:
         st.title("BiteChat")
+
+def sample_chat(question):
+    st.session_state.chat_started = True
+
+    with st.spinner("Spooning..."):
+        # display_sample_question()
+        st.session_state.messages.append({"role": "user", "content": question})
+        response = chat(question, st.session_state.session_id)['output']
+        st.session_state.messages.append({"role": "assistant", "content": response})
 
 def setup_sidebar():
     # Initialize the 'filter' key in session_state if it doesn't already exist
@@ -84,39 +95,59 @@ def setup_sidebar():
 
 # Display chat history
 def display_chat_history():
-    for message in st.session_state.messages: 
-        if message["role"] == "assistant":
-            st.chat_message("assistant").write(message["content"])
-        else:
-            st.chat_message("user").write(message["content"])
+    if st.session_state.chat_started:
+        display_sample_question()
+        for message in st.session_state.messages: 
+            if message["role"] == "assistant":
+                st.chat_message("assistant").write(message["content"])
+            else:
+                st.chat_message("user").write(message["content"])
 
 # Chat handler
 def handle_chat():
     with st.spinner("Spooning..."):
-        if "message" not in st.session_state:
-            st.session_state.message = []
-
-        for message in st.session_state.message:
-            with st.chat_message(message["role"]):
-                st.markdown(message['content'])
-
         if prompt := st.chat_input("Seeking any food suggestion?"):
-            st.session_state.messages.append({"role": "user", "content": prompt + str(st.session_state.filter)})
+            st.session_state.chat_started = True
+            st.session_state.messages.append({"role": "user", "content": prompt})
             with st.chat_message("user"):
                 st.markdown(prompt)
             with st.chat_message("assistant"):
                 message_placeholder = st.empty()
                 response = ""
-                response = chat(prompt, st.session_state.session_id)['output']
+                response = chat(prompt + str(st.session_state.filter), st.session_state.session_id)['output']
                 message_placeholder.markdown(response)
 
             st.session_state.messages.append({"role": "assistant", "content": response})
+
+        # for message in st.session_state.messages:
+        #     with st.chat_message(message["role"]):
+        #         st.markdown(message['content'])
+
+def display_sample_question():
+    if not st.session_state.chat_started:
+        print(f"chat_started status in display_sample_question: {st.session_state.chat_started}")
+        # st.write("How can BiteChat help you today?")
+        # col1, col2 = st.columns(2) 
+        # with col1:
+        if st.button("Looking for a dating restaurant"):
+            sample_chat("I am looking for a restaurant for a date. Please recommend a few options near University of Washington with good vibe, services and food.")
+        # with col2:
+        if st.button("Looking for best vegetarian Indian food"):
+            sample_chat("Looking for vegetarian Indian food in Seattle. Please suggest some spots with signature vegie cuisine.")
+
+        if st.button("Looking for a pet-friendly restaurant with parking availibility"):
+            sample_chat("I am looking for a pet-friendly restaurant in Seattle with parking availibility. Please suggest some options.")
+
+        if st.button("Looking for a good Japanese restaurant near Bellevue."):
+            sample_chat("I am looking for a good Japanese restaurant near Bellevue. Please suggest some options with their popular dishes.")
 
 
 def main():
     initialize_session_state()
     setup_page_layout()
     setup_sidebar()
+    if not st.session_state.chat_started:
+        display_sample_question()
     display_chat_history()
     handle_chat()
 
