@@ -17,10 +17,6 @@ from dotenv import load_dotenv
 import json
 
 load_dotenv()
-cloud_id = os.getenv('ElasticSearch_ID')
-if not cloud_id.endswith("=="):
-    cloud_id += "=="
-print(cloud_id)
 
 ## Coordinate Search Tool
 class CoordinateSearchTool(BaseTool):
@@ -72,14 +68,14 @@ class ElasticSearchTool(BaseTool):
     
     def _run(self, **kwargs: str) -> List[Dict]:
         # make sure cloud_id is formatted correctly
-        cloud_id = os.getenv('ElasticSearch_ID')
+        cloud_id = os.getenv('ELASTICSEARCH_ID')
         if not cloud_id.endswith("=="):
             cloud_id += "=="
         print(cloud_id)
 
         es = Elasticsearch(
             cloud_id=cloud_id,
-            basic_auth=("elastic", os.getenv('ElasticSearch_PWD'))
+            basic_auth=("elastic", os.getenv('ELASTICSEARCH_PWD'))
         )
 
         # Default values
