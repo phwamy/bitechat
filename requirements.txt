@@ -7,3 +7,4 @@ pydantic
 langchain-community
 langchain
 langchain-openai
+typing
