@@ -46,7 +46,7 @@ def setup_sidebar():
 
     with st.sidebar:
         st.write("## Price")
-        price_options = {"$": "price level inexpensive", "$$": "price level moderate", "$$$": "price level expensive"}
+        price_options = {"-$ Inexpensive": "price level inexpensive", "-$$ Moderate": "price level moderate", "-$$$ Expensive": "price level expensive"}
         for price, label in price_options.items():
             if st.checkbox(price, key=f"price_{price}"):
                 update_filter(label, True)
@@ -126,12 +126,13 @@ def handle_chat():
 def display_sample_question():
     if not st.session_state.chat_started:
         print(f"chat_started status in display_sample_question: {st.session_state.chat_started}")
+        st.markdown("#")
+        st.markdown("#")
+        st.markdown("#")
+        st.markdown("#")
         # st.write("How can BiteChat help you today?")
-        # col1, col2 = st.columns(2) 
-        # with col1:
         if st.button("Looking for a dating restaurant"):
             sample_chat("I am looking for a restaurant for a date. Please recommend a few options near University of Washington with good vibe, services and food.")
-        # with col2:
         if st.button("Looking for best vegetarian Indian food"):
             sample_chat("Looking for vegetarian Indian food in Seattle. Please suggest some spots with signature vegie cuisine.")
 
