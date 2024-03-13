@@ -1,19 +1,17 @@
 
 <img src="https://github.com/phwamy/bitechat/blob/main/img/bitechat_logo.png?raw=true" alt="bitechat" width=80/>
 
-# BiteChat
-
-**An AI food discovery specialist**
+# BiteChat: An AI food discovery specialist**
 
 
-## Problem - Dining Discovery is Broken
+## Dining Decisions are a Hassle
 Deciding where to eat shouldn't be a chore, especially when you have dietary restrictions or specific cravings. Scouring reviews and filtering results shouldn't take away from the joy of a good meal.
 
 <p align="center">
     <img src="https://github.com/phwamy/bitechat/blob/main/img/problem.png?raw=true" alt="problem" width=500/>
 </p>
 
-## What We Offer
+## Dine Smarter, Not Harder
 Our smart technology gets you from craving to dining table in record time. Get instant, tailored recommendations that leave you satisfied – not stressed.
 
 * Smart spending, savory meals
@@ -30,10 +28,10 @@ Our smart technology gets you from craving to dining table in record time. Get i
 * **Dish-driven restaurant discovery:** Search by your dream dish and find the restaurants that make it best.
 * **Signature dish and taste-matched ordering:** Uncover must-try dishes and avoid menu misses with recommendations tailored to your preferences.
 
-## Demo Site
+## See BiteChat in Action
 [BiteChat](https://bitechat.streamlit.app/)
 
-## Technology
+## The Tech Behind the Flavor
 We've developed a Retrieval Augmented Generation (RAG) chatbot built on Elasticsearch. This solution leverages Elasticsearch's hybrid search capabilities (combining full-text and vector search) to accurately retrieve information from diverse data sources, enhancing precision compared to semantic search alone. Our approach integrates the contextual understanding of Large Language Models (LLMs) with Elasticsearch's robust search functionality, delivering personalized restaurant and meal suggestions while minimizing inaccurate responses.
 
 We employ a Langchain agent powered by an LLM to interpret user intent and execute tasks. These tasks include customizing functions like geocoding and using the Elasticsearch tool to gather restaurant data, synthesize information, and generate tailored responses.
@@ -54,5 +52,5 @@ We employ a Langchain agent powered by an LLM to interpret user intent and execu
 * User Experience Research: Shivam Mittal
 * Project Manager: Zach Anderson
 * Machine Learning Engineer: PeiHsin Wang [:incoming_envelope:](phw.amy@gmail.com)
-* Imaages Creation: Anushuka Soni
+* Images Creation: Anushuka Soni
 
