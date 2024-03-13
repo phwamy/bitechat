@@ -1,6 +1,8 @@
 
 <img src="https://github.com/phwamy/bitechat/blob/main/img/bitechat_logo.png?raw=true" alt="bitechat" width=80/>
+
 # BiteChat
+
 **An AI food discovery specialist**
 
 
@@ -51,6 +53,6 @@ We employ a Langchain agent powered by an LLM to interpret user intent and execu
 * Market Research: Hannah Tsao
 * User Experience Research: Shivam Mittal
 * Project Manager: Zach Anderson
-* Machine Learning Engineer: PeiHsin Wang [:email:](phw.amy@gmail.com)
+* Machine Learning Engineer: PeiHsin Wang [:incoming_envelope:](phw.amy@gmail.com)
 * Imaages Creation: Anushuka Soni
 
