@@ -1,7 +1,12 @@
+<div align="center">
 
-<img src="https://github.com/phwamy/bitechat/blob/main/img/bitechat_logo.png?raw=true" alt="bitechat" width=80/>
+![bitechat](https://github.com/phwamy/bitechat/blob/main/img/bitechat_logo.png?raw=true | width=80)
 
-# BiteChat: An AI food discovery specialist**
+# BiteChat
+
+**An AI food discovery specialist**
+
+</div>
 
 
 ## Dining Decisions are a Hassle
