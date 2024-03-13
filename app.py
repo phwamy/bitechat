@@ -14,7 +14,7 @@ def initialize_session_state():
 
 def setup_page_layout():
     st.set_page_config(layout="wide")
-    logo_html = """<img src="https://github.com/phwamy/bitechat/blob/main/bitechat_logo.png?raw=true" alt="Logo" width="70" height="70">"""
+    logo_html = """<img src="https://github.com/phwamy/bitechat/blob/main/img/bitechat_logo.png?raw=true" alt="Logo" width="70" height="70">"""
     col1, col2 = st.columns([1, 8])
     with col1:
         st.markdown(logo_html, unsafe_allow_html=True)

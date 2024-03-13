@@ -1,12 +1,15 @@
-# BiteChat
-An AI food discovery specialist
-
-![bitechat](https://github.com/phwamy/bitechat/blob/main/img/bitechat_logo.png?raw=true)
+<p align="center">
+  <img src="https://github.com/phwamy/bitechat/blob/main/img/bitechat_logo.png?raw=true" alt="bitechat"/>
+  <h1> BiteChat </h1>
+  <p> An AI food discovery specialist </p>
+</p>
 
 ## Problem - Dining Discovery is Broken
 Deciding where to eat shouldn't be a chore, especially when you have dietary restrictions or specific cravings. Scouring reviews and filtering results shouldn't take away from the joy of a good meal.
 
-![problem](https://github.com/phwamy/bitechat/blob/main/img/problem.png?raw=true)
+<p align="center">
+    <img src="https://github.com/phwamy/bitechat/blob/main/img/problem.png?raw=true" alt="problem" width=500/>
+</p>
 
 ## What We Offer
 Our smart technology gets you from craving to dining table in record time. Get instant, tailored recommendations that leave you satisfied – not stressed.
@@ -16,7 +19,9 @@ Our smart technology gets you from craving to dining table in record time. Get i
 * Save your invaluabe time
 * Hidden gems unveiled
 
-![solution](https://github.com/phwamy/bitechat/blob/main/img/solution.png?raw=true)
+<p alignn="center">
+    <img src="https://github.com/phwamy/bitechat/blob/main/img/solution.png?raw=true" alt="solution" width=500/>
+</p>
 
 ## Key Features
 * **Hyper-personalized restaurant recommendations:** Get spot-on suggestions based on your cravings, dietary needs, and favorite flavors.
@@ -47,4 +52,5 @@ We employ a Langchain agent powered by an LLM to interpret user intent and execu
 * User Experience Research: Shivam Mittal
 * Project Manager: Zach Anderson
 * Machine Learning Engineer: [PeiHsin Wang](phw.amy@gmail.com)
+* Imaages Creation: Anushuka Soni
 
