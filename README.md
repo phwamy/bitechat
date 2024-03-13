@@ -1,10 +1,8 @@
 <div align="center">
-
-![bitechat](https://github.com/phwamy/bitechat/blob/main/img/bitechat_logo.png?raw=true | width=80)
+    <img src="https://github.com/phwamy/bitechat/blob/main/img/bitechat_logo.png?raw=true" alt="bitechat" width=80/>
 
 # BiteChat
-
-**An AI food discovery specialist**
+## An AI food discovery specialist
 
 </div>
 
