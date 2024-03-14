@@ -56,5 +56,5 @@ We employ a Langchain agent powered by an LLM to interpret user intent and execu
 * Project Manager: Zach Anderson
 * Machine Learning Engineer: Pei-Hsin Wang [:incoming_envelope:](phw.amy@gmail.com)
 * Images Creation: Anushuka Soni
-* Demo: Shivam Mittal
+* Demo: Shivam Mittal & Pei-Hsin Wang
 
