@@ -86,10 +86,6 @@ class ElasticSearchTool(BaseTool):
         
         print(f"Index: {index}, Query: {query}, Latitude: {lat}, Longitude: {lon}")
 
-        model = SentenceTransformer('intfloat/e5-small-v2')
-        vector = model.encode(query, normalize_embeddings=True).tolist()
-        print("Vector created.")
-
         # Construct the geo_distance filter if lat and lon are provided
         geo_distance_filter = {}
         if lat is not None and lon is not None:
@@ -102,6 +98,12 @@ class ElasticSearchTool(BaseTool):
                 }]
             }
 
+        # Create embedding vector for the query
+        model = SentenceTransformer('intfloat/e5-small-v2')
+        vector = model.encode(query, normalize_embeddings=True).tolist()
+        print("Vector created.")
+
+        # Hybrid search
         response = es.search(
             index=index,
             size=3,
