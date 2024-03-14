@@ -21,18 +21,6 @@ def setup_page_layout():
     with col2:
         st.title("BiteChat")
 
-def sample_chat(question):
-    """
-    Function for sample questions to call the chat function and display the response
-    """
-
-    st.session_state.chat_started = True
-
-    with st.spinner("Spooning..."):
-        st.session_state.messages.append({"role": "user", "content": question})
-        response = chat(question, st.session_state.session_id)['output']
-        st.session_state.messages.append({"role": "assistant", "content": response})
-
 def setup_sidebar():
     def update_filter(option, is_checked):
         """
@@ -120,10 +108,6 @@ def handle_chat():
 
             st.session_state.messages.append({"role": "assistant", "content": response})
 
-        # for message in st.session_state.messages:
-        #     with st.chat_message(message["role"]):
-        #         st.markdown(message['content'])
-
 def display_sample_question():
     if not st.session_state.chat_started:
         print(f"chat_started status in display_sample_question: {st.session_state.chat_started}")
@@ -142,6 +126,18 @@ def display_sample_question():
 
         if st.button("Looking for a good Japanese restaurant near Bellevue."):
             sample_chat("I am looking for a good Japanese restaurant near Bellevue. Please suggest some options with their popular dishes.")
+
+def sample_chat(question):
+    """
+    Function for sample questions to call the chat function and display the response
+    """
+
+    st.session_state.chat_started = True
+
+    with st.spinner("Spooning..."):
+        st.session_state.messages.append({"role": "user", "content": question})
+        response = chat(question, st.session_state.session_id)['output']
+        st.session_state.messages.append({"role": "assistant", "content": response})
 
 
 def main():
