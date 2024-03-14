@@ -32,6 +32,7 @@ Our AI-powered technology gets you from craving to dining table in record time. 
 
 ## See BiteChat in Action
 [BiteChat](https://bitechat.streamlit.app/)
+[Demo video](https://drive.google.com/file/d/1v2W2IWsmQYUk297GKy7BHEcdE4WPlHFs/view)
 
 ## The Tech Behind the Flavor
 We've developed a Retrieval Augmented Generation (RAG) chatbot built on Elasticsearch. This solution leverages Elasticsearch's hybrid search capabilities (combining full-text and vector search) to accurately retrieve information from diverse data sources, enhancing precision compared to semantic search alone. Our approach integrates the contextual understanding of Large Language Models (LLMs) with Elasticsearch's robust search functionality, delivering personalized restaurant and meal suggestions while minimizing inaccurate responses.
@@ -55,4 +56,5 @@ We employ a Langchain agent powered by an LLM to interpret user intent and execu
 * Project Manager: Zach Anderson
 * Machine Learning Engineer: Pei-Hsin Wang [:incoming_envelope:](phw.amy@gmail.com)
 * Images Creation: Anushuka Soni
+* Demo: Shivam Mittal
 
