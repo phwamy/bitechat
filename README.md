@@ -1,8 +1,7 @@
 <div align="center">
     <img src="https://github.com/phwamy/bitechat/blob/main/img/bitechat_logo.png?raw=true" alt="bitechat" width=80/>
 
-# BiteChat
-## An AI food discovery specialist
+# BiteChat: An AI food discovery specialist
 
 </div>
 
@@ -11,19 +10,19 @@
 Deciding where to eat shouldn't be a chore, especially when you have dietary restrictions or specific cravings. Scouring reviews and filtering results shouldn't take away from the joy of a good meal.
 
 <p align="center">
-    <img src="https://github.com/phwamy/bitechat/blob/main/img/problem.png?raw=true" alt="problem" width=500/>
+    <img src="https://github.com/phwamy/bitechat/blob/main/img/problem.png?raw=true" alt="problem" width=450/>
 </p>
 
 ## Dine Smarter, Not Harder
-Our smart technology gets you from craving to dining table in record time. Get instant, tailored recommendations that leave you satisfied – not stressed.
+Our AI-powered technology gets you from craving to dining table in record time. Get instant, tailored recommendations that leave you satisfied – not stressed.
 
-* Smart spending, savory meals
+* Savory Meals, Savvy Spending
 * Dining experiences elavated
 * Save your invaluabe time
 * Hidden gems unveiled
 
 <p align="center">
-    <img src="https://github.com/phwamy/bitechat/blob/main/img/solution.png?raw=true" alt="solution" width=500/>
+    <img src="https://github.com/phwamy/bitechat/blob/main/img/solution.png?raw=true" alt="solution" width=450/>
 </p>
 
 ## Key Features
@@ -41,10 +40,10 @@ We employ a Langchain agent powered by an LLM to interpret user intent and execu
 
 * Data source: Google Maps
 * Models: 
-    * Popular dishes extraction: (Mistral v0.2)[https://ollama.com/library/mistral] model
-    * Reivew summarization: (facebook/bart-large-cnn)[https://huggingface.co/facebook/bart-large-cnn] model
-    * Embeddings: (intfloat/e5-small-v2)[https://huggingface.co/intfloat/e5-small-v2] model
-    * Chat: (gpt-3.5-turbo-0125)[https://platform.openai.com/docs/models/gpt-3-5-turbo] model
+    * Popular dishes extraction: [Mistral v0.2](https://ollama.com/library/mistral) model
+    * Reivew summarization: [facebook/bart-large-cnn][https://huggingface.co/facebook/bart-large-cnn] model
+    * Embeddings: [intfloat/e5-small-v2][https://huggingface.co/intfloat/e5-small-v2] model
+    * Chat: [gpt-3.5-turbo-0125][https://platform.openai.com/docs/models/gpt-3-5-turbo] model
 * Search Engine: Elastic Cloud
 * Agent and Tools: Use `langchain` to create an agent that controls geocoding tool and Elasticsearch retrieval tool. 
 * Deployment: Streamlit Community Cloud
@@ -54,6 +53,6 @@ We employ a Langchain agent powered by an LLM to interpret user intent and execu
 * Market Research: Hannah Tsao
 * User Experience Research: Shivam Mittal
 * Project Manager: Zach Anderson
-* Machine Learning Engineer: PeiHsin Wang [:incoming_envelope:](phw.amy@gmail.com)
+* Machine Learning Engineer: Pei-Hsin Wang [:incoming_envelope:](phw.amy@gmail.com)
 * Images Creation: Anushuka Soni
 

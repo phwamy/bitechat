@@ -132,6 +132,7 @@ class ElasticSearchTool(BaseTool):
     def _arun(self, **kwargs: str) -> List[Dict]:
         raise NotImplementedError("This tool does not support async")
 
+## Chat Agent Manager
 class AgentManger:
     def __init__(self, config_path='config.json'):
 
@@ -206,5 +207,6 @@ class AgentManger:
 ## Initialize the agent manager  
 rag_agent = AgentManger()
 
+## Create a chat function for application to use
 def chat(user_message, session_id):
     return rag_agent.chat_with_agent(user_message, session_id)

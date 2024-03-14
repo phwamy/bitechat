@@ -22,21 +22,22 @@ def setup_page_layout():
         st.title("BiteChat")
 
 def sample_chat(question):
+    """
+    Function for sample questions to call the chat function and display the response
+    """
+
     st.session_state.chat_started = True
 
     with st.spinner("Spooning..."):
-        # display_sample_question()
         st.session_state.messages.append({"role": "user", "content": question})
         response = chat(question, st.session_state.session_id)['output']
         st.session_state.messages.append({"role": "assistant", "content": response})
 
 def setup_sidebar():
-    # Initialize the 'filter' key in session_state if it doesn't already exist
-    if 'filter' not in st.session_state:
-        st.session_state.filter = []
-
-    # Function to update the session state based on checkbox interactions
     def update_filter(option, is_checked):
+        """
+        Function to update the session state based on checkbox interactions
+        """
         if is_checked:
             if option not in st.session_state.filter:
                 st.session_state.filter.append(option)
