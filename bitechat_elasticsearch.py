@@ -69,8 +69,8 @@ class ElasticSearchTool(BaseTool):
     def _run(self, **kwargs: str) -> List[Dict]:
         # make sure cloud_id is formatted correctly
         cloud_id = os.getenv('ELASTICSEARCH_ID')
-        if not cloud_id.endswith("=="):
-            cloud_id += "=="
+        if not cloud_id.endswith("="):
+            cloud_id += "="
         print(cloud_id)
 
         es = Elasticsearch(
@@ -114,7 +114,8 @@ class ElasticSearchTool(BaseTool):
                     }
                 }
             },
-            _source=["info", "food", "review_summary"],
+            # _source=["info", "food", "review_summary"],
+            _source=["info"],
             knn={
                 "field": "review_vector",
                 "query_vector": vector,
