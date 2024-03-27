@@ -106,16 +106,11 @@ class ElasticSearchTool(BaseTool):
         # Hybrid search
         response = es.search(
             index=index,
-            size=3,
+            size=4,
             query={
-                "bool": {
-                    "must": {
-                        "match_all": {}
-                    }
-                }
+                {"match": {"info": query}}
             },
-            # _source=["info", "food", "review_summary"],
-            _source=["info"],
+            _source=["name", "rating", "userRatingCount", "priceLevel", "businessStatus", "types", "phone", "formattedAddress", "website","openingHours", "editorialSummary", "service", "payment", "accessibility", "coordinates", "food", "review_summary"],
             knn={
                 "field": "review_vector",
                 "query_vector": vector,
@@ -129,12 +124,11 @@ class ElasticSearchTool(BaseTool):
         results = []
         for hit in response['hits']['hits']:
             source = hit['_source']
-            formatted_source = {
-                'info': source.get('info', 'No information available'),
-                'popular_dishes': source.get('food', 'Popular dishes not available'),
-                'review_summary': source.get('review_summary', 'Review summary not available')
-        }
-            results.append(formatted_source)
+            # Check if the 'food' key exists in the dictionary
+            if 'food' in source:
+                # Change the key name from 'food' to 'popular_dishes'
+                source['popular_dishes'] = source.pop('food')
+            results.append(source)
 
         return results
 
