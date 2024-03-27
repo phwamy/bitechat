@@ -107,9 +107,7 @@ class ElasticSearchTool(BaseTool):
         response = es.search(
             index=index,
             size=4,
-            query={
-                {"match": {"info": query}}
-            },
+            query={"match": {"info": query}},
             _source=["name", "rating", "userRatingCount", "priceLevel", "businessStatus", "types", "phone", "formattedAddress", "website","openingHours", "editorialSummary", "service", "payment", "accessibility", "coordinates", "food", "review_summary"],
             knn={
                 "field": "review_vector",

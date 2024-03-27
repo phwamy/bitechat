@@ -11,6 +11,8 @@ def initialize_session_state():
         st.session_state.filter = []
     if "messages" not in st.session_state:
         st.session_state.messages = []
+    if "greeting_displayed" not in st.session_state: 
+        st.session_state.greeting_displayed = False   
 
 def setup_page_layout():
     st.set_page_config(layout="wide")
@@ -84,13 +86,11 @@ def setup_sidebar():
 
 # Display chat history
 def display_chat_history():
-    if st.session_state.chat_started:
-        display_sample_question()
-        for message in st.session_state.messages: 
-            if message["role"] == "assistant":
-                st.chat_message("assistant").write(message["content"])
-            else:
-                st.chat_message("user").write(message["content"])
+    for message in st.session_state.messages: 
+        if message["role"] == "assistant":
+            st.chat_message("assistant").write(message["content"])
+        else:
+            st.chat_message("user").write(message["content"])
 
 # Chat handler
 def handle_chat():
@@ -140,10 +140,17 @@ def sample_chat(question):
         st.session_state.messages.append({"role": "assistant", "content": response})
 
 
+def greeting():
+    greeting = "Hi! BiteChat here, ready to embark on a flavor-filled journey! What kind of culinary adventure are you dreaming of today?"
+    st.session_state.messages.append({"role": "assistant", "content": greeting})
+    st.session_state.greeting_displayed = True
+
+
 def main():
     initialize_session_state()
     setup_page_layout()
     setup_sidebar()
+    greeting()
     if not st.session_state.chat_started:
         display_sample_question()
     display_chat_history()
